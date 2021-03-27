@@ -33,7 +33,7 @@ class Amenity(AbstractItem):
     pass
 
     class Meta:
-        verbose_name_plural = "Ameniities"
+        verbose_name_plural = "Amenities"
 
 
 class Facility(AbstractItem):
