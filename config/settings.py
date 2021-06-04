@@ -133,3 +133,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 AUTH_USER_MODEL = "users.User"
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+MEDIA_URL = "/media/"  # 앞에 /를 붙이면 상대경로, 안 붙이면 절대경로
