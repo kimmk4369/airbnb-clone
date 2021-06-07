@@ -31,7 +31,7 @@ class RoomAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             "Basic Info",
-            {"fields": ("name", "description", "country", "address", "price")},
+            {"fields": ("name", "description", "country", "city", "address", "price")},
         ),
         ("Times", {"fields": ("check_in", "check_out", "instant_book")}),
         ("Spaces", {"fields": ("guests", "beds", "bedrooms", "baths")}),
@@ -80,6 +80,10 @@ class RoomAdmin(admin.ModelAdmin):
     search_fields = ("^city", "^host__username")  # ^ start with 옵션
 
     filter_horizontal = ("amenities", "facilities", "house_rules")
+
+    # def save_model(self, request, obj, form, change):
+    #     print(obj, change, form)
+    #     super().save_model(request, obj, form, change)
 
     def count_amenities(self, obj):  # self:RoomAdmin, obj:List의 현재 Row
         return obj.amenities.count()

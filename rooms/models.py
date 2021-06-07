@@ -100,6 +100,10 @@ class Room(core_models.TimeStampedModel):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):  # save Method Override
+        self.city = str.capitalize(self.city)  # 앞글자 대문자
+        super().save(*args, **kwargs)
+
     def total_rating(self):
         all_reviews = self.reviews.all()
         all_ratings = []
