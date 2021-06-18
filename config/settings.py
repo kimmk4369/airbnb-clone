@@ -137,3 +137,11 @@ AUTH_USER_MODEL = "users.User"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 MEDIA_URL = "/media/"  # 앞에 /를 붙이면 상대경로, 안 붙이면 절대경로
+
+
+# Email Conf
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = os.environ.get("MAILGUN_USERNAME")
+EMAIL_HOST_PASSWORD = os.environ.get("MAILGUN_PASSWORD")
+EMAIL_FROM = "no-reply@sandbox2b04aafa34494af496515d1bcb52de96.mailgun.org"
