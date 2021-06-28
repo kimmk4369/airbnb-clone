@@ -15,3 +15,11 @@
     @apply border-gray-600;
   }
 }
+
+.btn {
+  @apply text-center w-full rounded-sm py-5 font-light text-lg;
+}
+
+input {
+  @apply w-full rounded-sm py-5 font-light text-lg text-left border border-gray-600 px-5 focus:outline-none focus:border-green-500;
+}
