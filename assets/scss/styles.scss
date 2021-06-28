@@ -23,3 +23,9 @@
 input {
   @apply w-full rounded-sm py-5 font-light text-lg text-left border border-gray-600 px-5 focus:outline-none focus:border-green-500;
 }
+
+form {
+  input {
+    @apply mb-3;
+  }
+}
