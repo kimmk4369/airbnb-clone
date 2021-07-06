@@ -1,4 +1,3 @@
-from functools import update_wrapper
 from django.urls import reverse
 from django.db import models
 from django_countries.fields import CountryField
@@ -124,3 +123,9 @@ class Room(core_models.TimeStampedModel):
     def get_next_four_photos(self):
         photos = self.photos.all()[1:5]
         return photos
+
+    def get_beds(self):
+        if self.beds == 1:
+            return "1 bed"
+        else:
+            return f"{self.beds} beds"
